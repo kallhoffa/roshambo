@@ -12,6 +12,10 @@ class Option {
             return new Paper();
         } else if (input === 'scissors' || input === 2){
             return new Scissors();
+        } else if (input === 'lizard' || input === 3){
+            return new Lizard();
+        } else if (input === 'spock' || input === 4){
+            return new Spock();
         } else {
             return false
         }
@@ -23,7 +27,7 @@ class Option {
 class Rock extends Option{
     constructor(){
         let name = 'rock'
-        let beats = ['scissors']
+        let beats = ['scissors', 'lizzard']
         super(name, beats)
     }
 }
@@ -31,7 +35,7 @@ class Rock extends Option{
 class Scissors extends Option{
     constructor(){
         let name = 'scissors'
-        let beats = ['paper']
+        let beats = ['paper','lizard']
         super(name, beats)
     }
 }
@@ -39,7 +43,23 @@ class Scissors extends Option{
 class Paper extends Option{
     constructor(){
         let name = 'paper'
-        let beats = ['rock']
+        let beats = ['rock','spock']
+        super(name, beats)
+    }
+}
+
+class Lizard extends Option{
+    constructor(){
+        let name = 'lizard'
+        let beats = ['rock','spock']
+        super(name, beats)
+    }
+}
+
+class Spock extends Option{
+    constructor(){
+        let name = 'spock'
+        let beats = ['rock','scissors']
         super(name, beats)
     }
 }

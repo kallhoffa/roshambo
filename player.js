@@ -1,3 +1,4 @@
+const game = require('./game')
 const {Option} = require('./option')
 
 class Player {
@@ -12,14 +13,18 @@ class Player {
 
 class Computer extends Player{
 
-    constructor(){
+    constructor(gameType){
         super('Computer')
-        this.determineChoice()
+        this.numOptions = 3
+        if(gameType === 'LizardSpock'){
+            this.numOptions = 5
+        }
+        this.choice = this.determineChoice()
     }
 
     determineChoice() {
-        let randomOption = Math.floor((Math.random()*10)%3);
-        this.choice = Option.createOptionFromString(randomOption)
+        let randomOption = Math.floor((Math.random()*this.numOptions));
+        return Option.createOptionFromString(randomOption)
     }
 
 }
