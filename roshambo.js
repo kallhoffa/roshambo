@@ -19,6 +19,11 @@ if(gameType !== 'LizardSpock' && gameType !== 'Normal'){
     process.exit(1)   
 }
 
+if(!humanInput){
+    console.log('please input a move')
+    process.exit(1)
+}
+
 let player1 = new Human(humanName, humanInput)
 let player2 = new Computer(gameType)
 
