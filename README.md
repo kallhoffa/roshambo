@@ -5,8 +5,8 @@ optional flags:
 - `--type=Normal|LizardSpock`
 
 example:
-```
-node roshambo.js --move=spock --name=Anthony --type=LizardSpock
+```bash
+$node roshambo.js --move=spock --name=Anthony --type=LizardSpock
 Playing a game of LizardSpock against the computer.
 Anthony plays spock!
 Computer plays scissors!
